@@ -1,17 +1,18 @@
 function fibonacci(num) {
 // your code here
-	let prev =0;
-	let curr =0;
-
-	if(num==1) return prev;
-	if(num==2) return curr;
-		return prev;
-	for(let i=3;i<=num;i++){
-		let next=prev+curr;
-		prev=curr;
-		curr=next;
+	return fib1(num-1);
+}
+function fib1(n) {
+	if(n<=0){
+		return 0;
 	}
-		return curr
+	return recursive(n-1,0,1);
+	}
+function recursive(n,prev,curr) {
+	if(n===0)
+		return curr;
+	return recursive(n-1,curr,curr+prev)
+	
 }
 
 module.exports = fibonacci;
